@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- VINCULACIONES -->
+            <!-- Iconos-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+            <!--Bootstrap-->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+            <!--Toastify-->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+            <!--CSS-->
+            <link rel="stylesheet" href="../main.css">
+            
+        <title>METRON REPUESTOS - COMPRAS</title>
+    </head>
+
+    <body class="">
+
+        <header>
+            <div class="m-4">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a href="../index.html" class="navbar-brand fs-1 fw-bold">MECATRON REPUESTOS</a>
+                        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-center fs-3 fw-bold" id="navbarCollapse">
+                            <div class="navbar-nav">
+                                <a href="../index.html" class="nav-item nav-link ">Nosotros</a>
+                                <a href="./contacto.html" class="nav-item nav-link">Contacto</a>
+                                <a href="./compras.html" class="nav-item nav-link active">Compras</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="row row-cols-1 row-cols-md-2 g-1">
+                <!-- SIDEBAR -->
+                    <div class="row row-cols-1 flex-shrink-0 p-3 bg-light" style="width: 280px;">
+                        <ul class="list-unstyled ps-0">
+
+                           <!--  <li class="mb-1">
+                                <button id="verCatalogo" class="btn fs-5 fw-bold">Ver Catálogo</button>
+                            </li>
+                            <li class="mb-1">
+                                <button id="ocultarCatalogo" class="btn fs-5 fw-bold">Ocultar Catálogo</button>
+                            </li> -->
+
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded collapsed fs-4 fw-bold" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">Repuestos</button>
+                                <div class="collapse" id="dashboard-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><button id="agregarRepuesto" data-bs-toggle="modal" data-bs-target="#idModalAgregarRepuesto" class="btn fs-5 fw-bold">+ Agregar</button></li>
+                                        <li><button href="#" class="btn fs-5 fw-bold">- Eliminar</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <form class="d-flex">
+                                    <input type="buscador" class="form-control me2" placeholder="Buscar nombre o marca" aria-label="Search">
+                                    <button type="btnBuscar" class="btn btn-outline-success"><i class="bi-search"></i></button>
+                                </form>
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected>Ordenar por:</option>
+                                <option value="1">Mayor a menor</option>
+                                <option value="2">Menor a mayor</option>
+                                <option value="3">Alfabeticamente</option>
+                            </select>
+                            
+                            <li class="border-top my-3"></li>
+                            <li className="nav-item" >
+                                <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary btn fs-5"><i class="fas fa-shopping-cart fa-1x"></i> Carrito de Compras</a>
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1"></li>
+                                <div class="btn fs-4 fw-bold" id="fecha" class="col-3"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>        
+            </main>
+
+            <div class="container">
+                <div id="coincidencia"></div>
+                <div id="repuestos" class="row"></div>
+            </div>
+            
+        <!-- MODAL BUTTON + AGREGAR-->
+            <div class="modal fade" id="idModalAgregarRepuesto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar repuesto nuevo</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+                            <form id="formAgregarRepuesto">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreInput" aria-describedby="nombre">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="marca" class="form-label">Marca:</label>
+                                    <input type="text" class="form-control" id="marcaInput" aria-describedby="marca">
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="precio" class="form-label">Precio:</label>
+                                    <input type="text" class="form-control" id="precioInput" aria-describedby="precio">
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="iva" class="form-label">Iva:</label>
+                                    <input type="text" class="form-control" id="ivaInput" aria-describedby="iva">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="precioVenta" class="form-label">Precio de Venta:</label>
+                                    <input type="text" class="form-control" id="precioVentaInput" aria-describedby="precioVenta">
+                                </div> -->
+                                <div class="mb-3">
+                                <label for="categoria" class="form-label">Categoria:</label>
+                                <input type="text" class="form-control" id="categoriaInput" aria-describedby="categoria">
+                                
+                                </div>
+                                <div class="mb-3">
+                                <label for="utilidad" class="form-label">Utilidad:</label>
+                                <input type="text" class="form-control" id="utilidadInput" aria-describedby="utilidad">
+                                
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="text" id="guardarRepuestoBtn" class="btn btn-success" data-bs-dismiss="modal">Guardar Repuesto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        <!--MODAL CARRITO-->
+            <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-bodyCarrito">
+                        
+                        </div>
+                        <div class="row ml-ato">
+                            <p id="precioTotal"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="botonFinalizarCompra">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <!--Script Sweet Alert-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!--Script Toastify-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!--Script Luxon-->
+        <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+        <!--Script de Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!--Archivos JS propios-->
+        <script src="../JS/repuestos.js"></script>
+        <script src="../JS/class.js"></script>
+        <!-- <script src="../JS/functionsSegundaPre.js"></script> -->
+    </body>
+</html>
