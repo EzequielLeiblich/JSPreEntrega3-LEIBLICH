@@ -3,8 +3,8 @@
 
     let repuestos = document.getElementById("repuestos")
     let guardarRepuestoBtn = document.getElementById("guardarRepuestoBtn")
-    let verCatalogoBtn = document.getElementById("verCatalogo")
-    let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo")
+    /* let verCatalogoBtn = document.getElementById("verCatalogo")
+    let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo") */
     let buscador = document.getElementById("buscador")
     let coincidencia = document.getElementById("coincidencia")
     let selectOrden = document.getElementById("selectOrden")
