@@ -3,8 +3,8 @@
 
     let repuestos = document.getElementById("repuestos")
     let guardarRepuestoBtn = document.getElementById("guardarRepuestoBtn")
-    /* let verCatalogoBtn = document.getElementById("verCatalogo")
-    let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo") */
+    let verCatalogoBtn = document.getElementById("verCatalogo")
+    let ocultarCatalogoBtn = document.getElementById("ocultarCatalogo")
     let buscador = document.getElementById("buscador")
     let coincidencia = document.getElementById("coincidencia")
     let selectOrden = document.getElementById("selectOrden")
@@ -32,13 +32,11 @@
             nuevoRepuesto.classList.add("col-12", "col-md-6" , "col-lg-4" , "my-3")
             nuevoRepuesto.innerHTML = `
             <div id="${repuesto.id}" class="card" style="width: 18rem;">
-                <img src="../assets/bombaagua1.jpg" height="250" width="250" alt="${repuesto.nombre} marca ${repuesto.marca}">
+                <img src="../assets/${repuesto.imagen}" height="250" width="250" alt="${repuesto.nombre} marca ${repuesto.marca}">
                 <div class="card-body">
                     <h3 class="card-title">${repuesto.nombre}</h3>
                     <p>Marca: ${repuesto.marca}</p>
-                    <p class="">Precio: $${repuesto.precio}</p>
-                    <p>Iva: $${repuesto.precio*0.21}</p>
-                    <p>Venta: $${(repuesto.precio*0.21)+repuesto.precio}</p>
+                    <p>Precio: $${repuesto.precio}</p>
                     <p>Categoria: ${repuesto.categoria}</p>
                     <p>Utilidad: ${repuesto.utilidad}</p>
                     <button id="agregarBtn${repuesto.id}" class="btn btn-outline-success">Agregar al carrito</button>
@@ -95,13 +93,11 @@
         let inputNombre = document.getElementById("nombreInput")
         let inputMarca = document.getElementById("marcaInput")
         let inputPrecio = document.getElementById("precioInput")
-        /* let inputIva = document.getElementById("ivaInput")
-        let inputPrecioVenta = document.getElementById("precioVentaInput") */
         let inputCategoria = document.getElementById("categoriaInput")
         let inputUtilidad = document.getElementById("utilidadInput")
     
         //creamos nuevo objeto 
-        const repuestoNuevo = new Repuesto(array.length+1, inputNombre.value, inputMarca.value, inputPrecio.value, [inputPrecio*0.21].value, [(inputPrecio*0.21)+inputPrecio].value, inputCategoria.value, inputUtilidad.value,  "desconocido.png")
+        const repuestoNuevo = new Repuesto(array.length+1, inputNombre.value, inputMarca.value, inputPrecio.value, inputCategoria.value, inputUtilidad.value,  "desconocido.png")
         console.log(repuestoNuevo)
         //sumarlo a catalogo
         array.push(repuestoNuevo)
