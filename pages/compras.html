@@ -41,55 +41,43 @@
                 </nav>
             </div>
         </header>
-        <main>
-            <div class="row row-cols-1 row-cols-md-2 g-1">
-                <!-- SIDEBAR -->
-                    <div class="row row-cols-1 flex-shrink-0 p-3 bg-light" style="width: 280px;">
-                        <ul class="list-unstyled ps-0">
-
-                            <!-- <li class="mb-1">
-                                <button id="verCatalogo" class="btn fs-5 fw-bold">Ver Catálogo</button>
-                            </li>
-                            <li class="mb-1">
-                                <button id="ocultarCatalogo" class="btn fs-5 fw-bold">Ocultar Catálogo</button>
-                            </li>
-                            <li class="border-top my-3"></li> -->
-
-                            <li class="mb-1">
-                                <button class="btn btn-toggle align-items-center rounded collapsed fs-4 fw-bold" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">Repuestos</button>
-                                <div class="collapse" id="dashboard-collapse">
-                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><button id="agregarRepuesto" data-bs-toggle="modal" data-bs-target="#idModalAgregarRepuesto" class="btn fs-5 fw-bold">+ Agregar</button></li>
-                                        <li><button href="#" class="btn fs-5 fw-bold">- Eliminar</button></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="border-top my-3"></li>
-                            <li class="mb-1">
-                                <form class="d-flex">
-                                    <input type="buscador" class="form-control me2" placeholder="Buscar nombre o marca" aria-label="Search">
-                                    <button type="btnBuscar" class="btn btn-outline-success"><i class="bi-search"></i></button>
-                                </form>
-                            </li>
-                            <li class="border-top my-3"></li>
-                            <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected>Ordenar por:</option>
-                                <option value="1">Mayor a menor</option>
-                                <option value="2">Menor a mayor</option>
-                                <option value="3">Alfabeticamente</option>
-                            </select>
-                            <li class="border-top my-3"></li>
-                            <li className="nav-item" >
-                                <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary btn fs-5"><i class="fas fa-shopping-cart fa-1x"></i> Carrito de Compras</a>
-                            </li>
-                            <li class="border-top my-3"></li>
-                            <li class="mb-1"></li>
-                                <div class="btn fs-4 fw-bold" id="fecha" class="col-3"></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>        
-            </main>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-1">
+            <!-- SIDEBAR -->
+                <div class="row row-cols-1 flex-shrink-0 p-3 bg-light text-center" style="width: 280px;">
+                    <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                            <button id="agregarRepuesto" data-bs-toggle="modal" data-bs-target="#idModalAgregarRepuesto" class="btn fs-5 fw-bold">Agregar Repuesto</button>
+                        </li>
+                        <li class="border-top my-3"></li>
+                        <li class="mb-1">
+                            <form class="d-flex">
+                                <input type="buscador" class="form-control me2" placeholder="Buscar nombre o marca" aria-label="Search">
+                                <button type="btnBuscar" class="btn btn-outline-success"><i class="bi-search"></i></button>
+                            </form>
+                        </li>
+                        <li class="border-top my-3"></li>
+                        <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected>Ordenar por:</option>
+                            <option value="1">Mayor a menor</option>
+                            <option value="2">Menor a mayor</option>
+                            <option value="3">Alfabeticamente</option>
+                        </select>
+                        <li class="border-top my-3"></li>
+                        <li className="nav-item" >
+                            <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary btn fs-5"><i class="fas fa-shopping-cart fa-1x"></i> Carrito de Compras</a>
+                        </li>
+                        <li class="border-top my-3"></li>
+                        <li class="mb-1"></li>
+                            <div class="btn fs-4 fw-bold" id="fecha" class="col-3"></div>
+                        </li>
+                        <li>
+                            <div class="btn fs-4 fw-bold" id="reloj" class="col-3"></div>
+                        </li>
+                    </ul>
+                </div>
+        </div>        
+            
 
             <div class="container">
                 <div id="coincidencia"></div>
@@ -101,7 +89,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar repuesto nuevo</h1>
+                            <h1 class="modal-title" id="exampleModalLabel">Agregar repuesto nuevo</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" id="modal-body">
