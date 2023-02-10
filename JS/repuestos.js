@@ -40,24 +40,22 @@
 
 /* FUNCTIONS */
     
-    /* MOSTRAR CATALOGO */
+    /* MOSTRAR STOCK */
 
         function mostrarCatalogo(array){
             repuestos.innerHTML = ""
             for(let repuesto of array){
-
                 let nuevoRepuesto = document.createElement("div")
                 nuevoRepuesto.classList.add("col-12", "col-md-6" , "col-lg-4" , "my-3")
                 nuevoRepuesto.innerHTML = `
                 <div id="${repuesto.id}" class="card" style="width: 18rem;">
-                    <img class="card-im-top img-fluid" src="../assets/${repuesto.imagen}" height="250" width="250" alt="${repuesto.nombre} marca ${repuesto.marca}">
+                    <img class="card-im-top img-fluid" src="../assets/${repuesto.imagen}" height="250" width="250" alt="${repuesto.nombre} de marca ${repuesto.marca}">
                     <div class="card-body">
                         <h3 class="card-title">${repuesto.nombre}</h3>
                         <p>Marca: ${repuesto.marca}</p>
-                        <p>Precio: $${repuesto.precio}</p>
+                        <p class="${repuesto.precio <= 1000 && "ofertaRepuesto"}">Precio: ${repuesto.precio}</p>
                         <p>Categoria: ${repuesto.categoria}</p>
                         <p>Utilidad: ${repuesto.utilidad}</p>
-                        <p class="${repuesto.precio <= 1000 && "ofertaRepuesto"}">Precio: ${repuesto.precio}</p>
                         <button id="agregarBtn${repuesto.id}" class="btn btn-outline-success">Agregar al carrito</button>
                     </div>
                 </div>`
@@ -264,10 +262,9 @@
     })
     
     
-    
-    buscador.addEventListener("input", ()=>{
+    /* buscador.addEventListener("input", ()=>{
         buscarInfo(buscador.value.toLowerCase(), stock)
-    }) 
+    })  */
     
     selectOrden.addEventListener("change", ()=>{
         console.log(selectOrden.value)
@@ -287,6 +284,3 @@
 
     botonFinalizarCompra.addEventListener("click", ()=>{
         finalizarCompra()})
-
-
-    
