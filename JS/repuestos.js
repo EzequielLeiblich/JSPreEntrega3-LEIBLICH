@@ -186,7 +186,7 @@
         
                 modalBodyCarrito.innerHTML += `
                 <div class="card border-primary mb-3" id ="productoCarrito${productoEnCarrito.id}" style="max-width: 540px;">
-                        <img class="card-img-top" height="300px" src="assets/${productoEnCarrito.imagen}" alt="">
+                        <img class="card-img-top" height="300px" src="../assets/${productoEnCarrito.imagen}" alt="">
                         <div class="card-body">
                             <h4 class="card-title">${productoEnCarrito.nombre}</h4>
                         
