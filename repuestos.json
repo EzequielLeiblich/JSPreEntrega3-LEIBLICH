@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "nombre": "Bomba de agua",
+        "marca": "SKF",
+        "precio": 7500,
+        "categoria": "Motor",
+        "utilidad": "Peugeot y Citroen",
+        "imagen": "bombaagua1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Bujia",
+        "marca": "Bosch",
+        "precio": 970,
+        "categoria": "Motor",
+        "utilidad": "Peugeot y Citroen",
+        "imagen": "bujia1.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Bateria 75*12",
+        "marca": "Willard",
+        "precio": 26000,
+        "categoria": "Electricidad",
+        "utilidad": "Todos",
+        "imagen": "bateria1.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Lámpara H7",
+        "marca": "Philips",
+        "precio": 1200,
+        "categoria": "Electricidad",
+        "utilidad": "Todos",
+        "imagen": "lampara1.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Shampoo",
+        "marca": "Meguiars",
+        "precio": 5300,
+        "categoria": "Limpieza",
+        "utilidad": "Todos",
+        "imagen": "shampoo1.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Aceite sintetico",
+        "marca": "ACDelco",
+        "precio": 7800,
+        "categoria": "Motor",
+        "utilidad": "Chevrolet",
+        "imagen": "aceite1.jpg"
+    }
+]
