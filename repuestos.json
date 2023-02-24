@@ -46,11 +46,83 @@
     },
     {
         "id": 6,
-        "nombre": "Aceite sintetico",
+        "nombre": "Aceite sintetico 0w20",
         "marca": "ACDelco",
         "precio": 7800,
         "categoria": "Motor",
         "utilidad": "Chevrolet",
         "imagen": "aceite1.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Bomba de freno Aluminio Bora 2.0",
+        "marca": "Volkswagen",
+        "precio": 30210,
+        "categoria": "Frenos",
+        "utilidad": "Volkswagen Bora 2.0",
+        "imagen": "Bombafrenobora1.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Aceite sintetico 0w30",
+        "marca": "Shell",
+        "precio": 16574,
+        "categoria": "Motor",
+        "utilidad": "Volkswagen Amarok",
+        "imagen": "aceite2.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Pomo palanca + suplemento",
+        "marca": "Peugeot",
+        "precio": 4050,
+        "categoria": "Carroceria",
+        "utilidad": "Peugeot 408",
+        "imagen": "pomopalanca1.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Repuesto antena 40cm",
+        "marca": "Generica",
+        "precio": 1599,
+        "categoria": "Electricidad",
+        "utilidad": "Todos",
+        "imagen": "antena1.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Soporte motor derecho",
+        "marca": "Chevrolet",
+        "precio": 12307,
+        "categoria": "Motor",
+        "utilidad": "Chevrolet",
+        "imagen": "soportederechomotor1.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Deposito refrigerante",
+        "marca": "Citroen",
+        "precio": 5490,
+        "categoria": "Motor",
+        "utilidad": "Citroen C4 1.6N",
+        "imagen": "Depositorefrigerante1.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "Bieleta suspension trasera",
+        "marca": "Peugeot",
+        "precio": 2988,
+        "categoria": "Suspension",
+        "utilidad": "Peugeot 406",
+        "imagen": "BieletaSuspTras1.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "Faro trasero",
+        "marca": "Ford",
+        "precio": 10570,
+        "categoria": "Carroceria",
+        "utilidad": "Ford Ka",
+        "imagen": "FarotraseroKa1.jpg"
     }
 ]

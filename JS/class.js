@@ -24,9 +24,8 @@ class Repuesto {
 let stock = []
 
 const cargarStock = async ()=>{
-    const response = await fetch("repuestos.json")
+    const response = await fetch("../repuestos.json")
     const data = await response.json()
-    console.log(data)
     for(let repuesto of data){
         let repuestoNuevo = new Repuesto(repuesto.id, repuesto.nombre, repuesto.marca, repuesto.precio, repuesto.categoria, repuesto.utilidad, repuesto.imagen)
         stock.push(repuestoNuevo)
@@ -40,8 +39,6 @@ if(localStorage.getItem("stock")){
         let repuestoNuevo = new Repuesto(repuesto.id, repuesto.nombre, repuesto.marca, repuesto.precio, repuesto.categoria, repuesto.utilidad, repuesto.imagen)
         stock.push(repuestoNuevo)
     }
-    console.log(stock)
 }else{
-    console.log("Seteando stock de repuestos")
     cargarStock()    
 }

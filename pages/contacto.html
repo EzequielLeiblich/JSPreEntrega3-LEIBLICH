@@ -9,6 +9,7 @@
         <!-- Iconos-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous"/>
         <!--Bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +17,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
         <!-- CSS -->
         <link rel="stylesheet" href="../main.css">
-        
+        <link rel="icon" href="../assets/favicon.png"/>
         <title>MECATRON REPUESTOS - CONTACTO</title>
     </head>
     <body>
@@ -25,7 +26,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <div>
-                            <a href="./index.html"><img src="../assets/logo1.jpeg" class="logo1"></a>
+                            <a href="./index.html"><img src="../assets/logo1.png" class="logo1"></a>
                         </div>
                         <a href="../index.html" class="navbar-brand fs-1 fw-bold">MECATRON REPUESTOS</a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,44 +59,67 @@
                     <br/><br/>
                 </section>
                 
+                
                 <!-- 2da SECCION -->
-                <section class="formulario">
-                    <form class="form_list">
-                        <legend class="tit_mensajes shadow-lg p-3 mb-5">DEJANOS TU MENSAJE:</legend>
-                        <fieldset class="mensajes">
-                            <label for="nombre_completo"><b>Apellido y Nombre:</b></label><br/>
-                            <input type="text" size="50" name="nombre_completo" placeholder="Apellido Y Nombre.." required/><br/>
-                            <label for="razon_social"><b>Razon Social:</b></label><br/>
-                            <input type="text" size="50" name="razon_social" placeholder="Razon Social.."/><br/>
-                            <label for="e-mail"><b>E-Mail:</b></label><br/>
-                            <input type="text" size="50" name="e-mail" placeholder="E-mail.." required/><br/>
-                            <label for="telefono"><b>Telefono:</b></label><br/>
-                            <input type="text" size="50" name="telefono" placeholder="Telefono.."/><br/>
-                            <label for="mensaje"><b>Comentarios:</b></label><br/>
-                            <textarea name="mensaje" cols="50" rows="10" placeholder="Escribe.."></textarea><br/>
-                            <input type="submit" class="btn btn-success " value="Enviar"/>
-                            <input type="reset" class="btn btn-danger" value="Borrar Todo"/><br/>
-                        </fieldset>
-                    </form><br/><br/>
-                </section>
+                <div class="tit_form">DEJANOS TU MENSAJE</div><br/><br/>
+                <div class="contenedor-1">
+                    <form id="form">
+                        <div>
+                            <label for="nombrecompleto"><b>Apellido y Nombre:</b></label>
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="nombrecompleto" id="nombrecompleto" placeholder="Apellido Y Nombre.."/>
+                            <i class="fas fa-exclamation-circle failure-icon"></i>
+                            <i class="far fa-check-circle success-icon"></i>
+                            <div class="error"></div>
+                        </div>
+                        <div>
+                            <label for="razonsocial"><b>Razon Social:</b></label>
+                            <i class="bi bi-wrench"></i>
+                            <input type="text" name="razonsocial" id="razonsocial" placeholder="Razon Social.."/>
+                            <i class="fas fa-exclamation-circle failure-icon"></i>
+                            <i class="far fa-check-circle success-icon"></i>
+                            <div class="error"></div>
+                        </div>
+                        <div>
+                            <label for="email"><b>E-Mail:</b></label>
+                            <i class="far fa-envelope"></i>
+                            <input type="email" name="email" id="email" placeholder="E-mail.."/>
+                            <i class="fas fa-exclamation-circle failure-icon"></i>
+                            <i class="far fa-check-circle success-icon"></i>
+                            <div class="error"></div>
+                        </div>
+                        <div>
+                            <label for="telefono"><b>Telefono:</b></label>
+                            <i class="bi bi-phone"></i>
+                            <input type="text" name="telefono" id="telefono" placeholder="Telefono.."/>
+                            <i class="fas fa-exclamation-circle failure-icon"></i>
+                            <i class="far fa-check-circle success-icon"></i>
+                            <div class="error"></div>
+                        </div>
+                        <div>
+                            <label for="mensaje"><b>Comentarios:</b></label>
+                            <textarea class="mensaje" name="mensaje" cols="40" rows="5" placeholder="Escribe.."></textarea>
+                        </div>
+                        <button class="submit" id="submit" type="submit">Enviar</button>
+                        <button class="reset" id="reset" type="reset">Borrar Todo</button>
+                    </form>
+                </div><br/><br/>
                 
                 <!-- 3er SECCION -->
                 <section class="nuestros_clientes">
                     <h3 class="tit_clientes shadow-lg p-3 mb-5">NUESTROS CLIENTES</h3>
                     <dl class="clientes">
-                        <li><a href="https://ads.google.com/"><img class="cl_gg"  src="./../assets/google.png"></a><br/>Google Ads</li>
-                        <li><a href="https://www.linkedin.com/feed/"><img class="cl_lk" src="./../assets/linkedin.png"></a><br/>Linkedin</li>
-                        <li><a href="https://www.youtube.com//"><img class="cl_yt" src="./../assets/youtube.png"></a><br/>YouTube</li>
-                        <li><a href="https://www.amazon.com/"><img class="cl_am" src="./../assets/amazon.png"></a><br/>Amazon</li>
-                        <li><a href="https://web.telegram.org/"><img class="cl_tg" src="./../assets/telegram.png"></a><br/>Telegram</li>
+                        <li><a href="https://www.facebook.com/people/Respuestos-Electrosur/100067759628755/?paipv=0&eav=AfYM6xCGvfDKd2xaKsFvodeLek3EopQJndQF5F9xlhEXkRiMNLXDtvxr_Q1Ty5gGyq8&_rdr"><img class="cl_el"  src="../assets/electrosur.jpg"></a><br/>Electrosur</li>
+                        <li><a href="https://www.pana.com.ar/index.html"><img class="cl_pa" src="../assets/pana.png"></a><br/>PANA</li>
+                        <li><a href="https://www.autoparts.com.ar/"><img class="cl_au" src="../assets/autoparts.png"></a><br/>Auto Parts</li>
+                        <li><a href="https://www.repuestosavenidavillamercedes.com/"><img class="cl_av" src="./../assets/avenida.png"></a><br/>Avenida</li>
+                        <li><a href="https://www.mercadolibre.com.ar/"><img class="cl_ml" src="./../assets/mercadolibre.png"></a><br/>Mercado Libre</li>
                     </dl><br/><br/>
                 </section>
             </div>
         </main>
         <!--Script de Bootstrap-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!--Script Sweet Alert-->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -13,6 +13,44 @@ let botonCarrito = document.getElementById("botonCarrito")
 let modalBodyCarrito = document.getElementById ("modal-bodyCarrito")
 let precioTotal = document.getElementById("precioTotal")
 let botonFinalizarCompra = document.getElementById("botonFinalizarCompra")
+let id = (id) => document.getElementById(id)
+let classes = (classes) => document.getElementsByClassName(classes)
+
+/* FORMULARIO CONTACTOS [ERROR en addEventListener no pude solucionarlo]*/ 
+
+/* let nombrecompleto = id("nombrecompleto"),
+    razonsocial = id("razonsocial"),
+    email = id("email"),
+    telefono = id("telefono"),
+    form = id("form"),
+    errorMsg = classes("error"),
+    successIcon = classes("success-icon"),
+    failureIcon = classes("failure-icon");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    engine(nombrecompleto, 0, "Nombre completo está en blanco");
+    engine(razonsocial, 1, "Razon social está en blanco");
+    engine(email, 2, "Email está en blanco");
+    engine(telefono, 3, "Telefono está en blanco");
+});
+
+let engine = (id, serial, message) => {
+    if (id.value.trim() === ""){
+        errorMsg[serial].innerHTML = message;
+        id.style.border = "2px solid red";
+        
+        failureIcon[serial].style.opacity = "1";
+        successIcon[serial].style.opacity = "0";
+    }else{
+        errorMsg[serial].innerHTML = "";
+        id.style.border = "2px solid green";
+        
+        failureIcon[serial].style.opacity = "0";
+        successIcon[serial].style.opacity = "1";
+    }
+}; */
 
 /* Fecha */
 const DateTime = luxon.DateTime
@@ -71,7 +109,6 @@ if(localStorage.getItem("carrito")){
         repuestoCarrito.cantidad = cantStorage
         productosEnCarrito.push(repuestoCarrito)
     }
-    console.log(productosEnCarrito)
 }else{
     productosEnCarrito = []
 }
@@ -80,9 +117,7 @@ if(localStorage.getItem("carrito")){
 function agregarAlCarrito(repuesto){
     let repuestoAgregado = productosEnCarrito.find((elem)=> elem.id == repuesto.id)
     if(repuestoAgregado == undefined){
-        console.log(`El repuesto ${repuesto.nombre} de ${repuesto.marca} ha sido agregado. Vale ${repuesto.precio}. Su categoria es ${repuesto.categoria} y se utiliza en ${repuesto.utilidad}`)
         productosEnCarrito.push(repuesto)
-        console.log(productosEnCarrito)
         localStorage.setItem("carrito", JSON.stringify(productosEnCarrito))
         Swal.fire({
             title: "Producto agregado!",
@@ -96,7 +131,6 @@ function agregarAlCarrito(repuesto){
         })
 
     }else{
-        console.log(`El repuesto ${repuestoAgregado.nombre} ya existe en el carrito`)
         Swal.fire({
             title: `Producto ya existente`,
             text: `EL repuesto ${repuestoAgregado.nombre} de ${repuestoAgregado.marca} ya existe en el carrito`,
@@ -117,10 +151,8 @@ function cargarRepuesto(array){
 
     /* CREAR REPUESTO */ 
     const repuestoNuevo = new Repuesto(array.length+1, inputNombre.value, inputMarca.value, inputPrecio.value, inputCategoria.value, inputUtilidad.value, "desconocido.png")
-    console.log(repuestoNuevo)
     /* AGREGAR AL STOCK */
     array.push(repuestoNuevo)
-    console.log(array)
     /* AGREGAR A LA MEMORIA LOCAL */
     localStorage.setItem("stock", JSON.stringify(array))
     mostrarCatalogo(array)
@@ -202,11 +234,8 @@ function cargarProductosCarrito(array){
             let cardProducto = document.getElementById(`productoCarrito${productoEnCarrito.id}`)
             cardProducto.remove()
             let productoEliminar = array.find((repuesto)=>repuesto.id == productoEnCarrito.id)
-            console.log(productoEliminar)
             let posicion = array.indexOf(productoEliminar)
-            console.log(posicion)
             array.splice(posicion,1)
-            console.log(array)
             localStorage.setItem("carrito", JSON.stringify(array))
             calcularTotal(array)
         })
@@ -224,12 +253,8 @@ function cargarProductosCarrito(array){
                 let cardProducto = document.getElementById(`productoCarrito${productoEnCarrito.id}`)
                 cardProducto.remove()
                 let productoEliminar = array.find((repuesto)=>repuesto.id == productoEnCarrito.id)
-                console.log(productoEliminar)
-                //indexOf para saber el indice en el array
                 let posicion = array.indexOf(productoEliminar)
-                console.log(posicion)
                 array.splice(posicion,1)
-                console.log(array)
                 localStorage.setItem("carrito", JSON.stringify(array))
                 calcularTotal(array)
             }else{
@@ -244,13 +269,12 @@ function cargarProductosCarrito(array){
 /* PRECIO TOTAL */
 function calcularTotal(array){
     let total = array.reduce((acc, productoCarrito)=> acc + (productoCarrito.precio * productoCarrito.cantidad) ,0)
-    console.log("Con reduce " +total)
     total == 0 ? precioTotal.innerHTML = `No hay productos en el carrito` :
     precioTotal.innerHTML = `El total del carrito es <strong>${total}</strong>`
     return total
 }
 
-/* REALIZAR COMPRA (NEGAR SI NO HAY PRODUCTOS EN CARRITO Y MOSTRAR FORMULARIO DE USUARIO)*/
+/* REALIZAR COMPRA */
 function finalizarCompra(){
     Swal.fire({
         title: 'Está seguro de realizar la compra',
@@ -291,7 +315,6 @@ buscador.addEventListener("input", ()=>{
     buscarInfo(buscador.value.toLowerCase(), stock)
 }) 
 selectOrden.addEventListener("change", ()=>{
-    console.log(selectOrden.value)
     if(selectOrden.value == 1){
         ordenarMayorMenor(stock)
     }else if(selectOrden.value == 2){
