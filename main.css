@@ -367,6 +367,11 @@
                 box-shadow: 2px 2px 10px black ;
             }
 
+            .ofertaRepuesto{
+                color: goldenrod;
+                font-weight: bold;
+            }
+
             .card-footer {
                 background-color: rgb(196, 221, 196);
             }
